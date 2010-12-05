@@ -130,6 +130,12 @@ h1 {
 	border-radius: 10px;
 }
 
+.content img {
+    float: right;
+    border: 1px solid #aaa;
+    margin-left: 1em;
+}
+
 .yellow {
 	background-color:rgba(250,240,200,0.5);	
 }
