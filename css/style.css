@@ -8,10 +8,12 @@
 
 a.basic, a.basic:visited {
 	text-decoration: none;
+	color: #3e4237;
 }
 
 a.basic:hover {
 	text-decoration: underline;
+	color: #3e4237;
 }
 
 body {
@@ -24,6 +26,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Inconsolata', arial, serif;
+	font-weight: normal;
 }
 
 hr {
@@ -31,7 +34,7 @@ hr {
 }
 
 p {
-	margin: 0;
+/*	margin: 0;*/
 }
 
 h1 {
@@ -52,6 +55,11 @@ h1 {
 	-moz-box-shadow: 0px 5px 5px #888;
 	-webkit-box-shadow: 0px 5px 5px #888;
 	box-shadow: 0px 5px 5px #888;
+}
+
+#top h1 a {
+	color: #fee;
+	text-decoration: none;
 }
 
 #top_links {
