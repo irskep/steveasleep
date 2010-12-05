@@ -21,11 +21,10 @@ from site import title_lookup, page_counts
 @app.route('/')
 def index():
     """Display front page with recent blog posts and Github commits"""
-    posts = query_posterous.get_posts()
-    commits = query_github.get_commits()
+    logging.info(str(query_posterous.get_posts()[0].keys()))
     context = {
-        'posts': posts,
-        'commits': commits,
+        'posts': query_posterous.get_posts(),
+        'commits': query_github.get_commits(),
         'title': "Home",
     }
     return render_template('index.html', **context)
@@ -46,7 +45,10 @@ def update_commits():
 
 @app.route('/<app_name>/<int:page>')
 def apps(app_name, page=1):
-    context = {'title': title_lookup[app_name]}
+    context = {
+        'title': title_lookup[app_name],
+        'commits': query_github.get_commits()
+    }
     total_pages = page_counts[app_name]
     if page > total_pages:
         abort(404)

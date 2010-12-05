@@ -1,0 +1,187 @@
+/*
+#003DSC
+*/
+
+.space {
+	height: 2em;
+}
+
+a.basic, a.basic:visited {
+	text-decoration: none;
+}
+
+a.basic:hover {
+	text-decoration: underline;
+}
+
+body {
+	background: #fff url(../images/background_main.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    min-height: 1368px;
+	color: #3e4237;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Inconsolata', arial, serif;
+}
+
+hr {
+	border-color: #3e4237;
+}
+
+p {
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Inconsolata', arial, serif;
+	font-weight: normal;
+	margin: 0;
+	font-size: 48px;
+	text-align: center;
+}
+
+#top {
+	background-color: #D15B41;
+	color: #fee;
+	
+/*	background-color: #32848a;*/
+/*	color: #ffe8a9;*/
+	
+	-moz-box-shadow: 0px 5px 5px #888;
+	-webkit-box-shadow: 0px 5px 5px #888;
+	box-shadow: 0px 5px 5px #888;
+}
+
+#top_links {
+	text-align: center;
+	color: #D45E20;
+}
+
+#top_links a, #top_links a:visited, top a:hover {
+	font-size: 18px;
+	color: #fee;
+	text-decoration: none;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+#top_links a:hover {
+	text-decoration: underline;
+}
+
+.sidebar_bubble {
+	background-color: #D15B41;
+	background-color:rgba(100,100,100,0.7);
+	color: #fff;
+	padding: 10px;
+	
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 1em;
+}
+
+.sidebar_bubble h2 {
+	font-size: 18px;
+	color: #FAF0C8;
+	font-weight: normal;
+	margin: 0;
+}
+
+.sidebar_bubble a, .sidebar_bubble a:visited, .sidebar_bubble a:hover {
+    color: #fff;
+	text-decoration: none;
+}
+
+.sidebar_bubble a:hover {
+	text-decoration: underline;
+	color: #ffe8a9;
+}
+
+.sidebar_bubble a:visted {
+	color: #ffe8a9;
+}
+
+.sidebar_bubble ul {
+    margin-left: 0;
+    margin-right: 0;
+	padding-left: 0;
+}
+
+.sidebar_bubble li {
+    list-style: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.content {
+/*	background-color: #ffe8a9;*/
+	background-color:rgba(200,200,200,0.5);
+	background-color:rgba(250,240,200,0.5);
+	
+/*	background: none;*/
+/*	border: 1px solid #aaa;*/
+	
+	padding: 10px;
+	margin-bottom: 10px;
+	
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.yellow {
+	background-color:rgba(250,240,200,0.5);	
+}
+
+.content h2 {
+	margin-bottom: 0.5em;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.content a, .content a:visited, .content a:hover {
+	color: #248;
+	text-decoration: none;
+}
+
+.content h2 a, .content h2 a:visited, .content h2 a:hover {
+	color: #3e4237;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+#bottom {
+	text-align: center;
+	font-family: 'Inconsolata', arial, serif;
+	font-size: 18px;
+}
+
+ul.recent_post_titles {
+    font-size: 1.2em;
+    margin-left: 0;
+}
+ul.recent_post_titles li, ul.recent_commits li {
+    list-style: none;
+    border-bottom: 1px solid #aaa;
+	margin: 0;
+    margin-bottom: 0.0em;
+    padding-bottom: 0.25em;
+    padding-top: 0.25em;
+}
+ul.recent_post_titles li, ul.recent_commits li.last {
+    border-bottom: none;
+}
+ul.recent_post_titles li.last, ul.recent_commits li.last {
+    margin-bottom: none;
+}
+ul.recent_commits {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.sidebar_bubble ul.recent_commits a {
+	color: #FAF0C8;
+}
