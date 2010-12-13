@@ -1,5 +1,6 @@
 import logging
 import simplejson
+import string
 
 from google.appengine.api.urlfetch import DownloadError
 
@@ -31,6 +32,9 @@ def update_github():
             commits.extend(new_commits)
         all_commits = sorted(commits, key=lambda c: c.committed_date)
         commits = reversed(all_commits[-settings.NUM_GITHUB_COMMITS:])
+        
+        linebreak_message = lambda m: string.replace(m, 'github.com/', 'github.com/ ')
+        
         for c in commits:
             minute = str(c.committed_date.minute)
             if len(minute) < 2:
@@ -45,7 +49,7 @@ def update_github():
                     'hour': c.committed_date.hour,
                     'minute': minute
                 },
-                'message': c.message,
+                'message': linebreak_message(c.message),
                 'url': c.url
             })
         
