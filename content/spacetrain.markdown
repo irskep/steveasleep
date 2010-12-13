@@ -10,6 +10,8 @@ Space Train is a short point-and-click adventure game developed over the course 
 
 The game is very short, but it serves as a great demo for the engine and as a showcase for the artists who put so much love into the environments and characters.
 
+The project was supervised by Dr. Marc Buchner, Case Western Reserve University and Knut Hybinette, Cleveland Institute of Art.
+
 The Team
 --------
 
