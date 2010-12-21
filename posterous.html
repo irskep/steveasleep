@@ -42,11 +42,23 @@
         margin: 0;
     }
     .content .bodytext h1 {
-    	font-size: 24px;
-    	font-weight: normal;
+        font-size: 24px;
+        font-weight: normal;
     }
     blockquote.posterous_medium_quote {
         font: normal normal normal 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    }
+    
+    div.posterousGalleryMainDiv a {
+        display: block;
+        float: left;
+    }
+    div.posterousGalleryMainDiv a.posterousGalleryMainlink {
+        clear: both;
+    }
+    div.posterousGalleryMainDiv a.posterousGalleryMainlink img {
+        border: none;
+        margin: 1em;
     }
     </style>
     <title>
@@ -199,6 +211,7 @@
                     
                     <div class="bodytext" >
                         <p>{Body}</p>
+                        <div style="clear: both;"></div>
                         
                         {block:List}
                             {block:TagList}
