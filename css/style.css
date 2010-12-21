@@ -21,7 +21,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Inconsolata', arial, serif;
+	font-family: 'Copse', arial, serif;
 	font-weight: normal;
 }
 
@@ -40,7 +40,7 @@ p {
 }
 
 h1 {
-	font-family: 'Inconsolata', arial, serif;
+	font-family: 'Copse', arial, serif;
 	font-weight: normal;
 	margin: 0;
 	font-size: 48px;
@@ -171,7 +171,7 @@ h1 {
 
 #bottom {
 	text-align: center;
-	font-family: 'Inconsolata', arial, serif;
+	font-family: 'Copse', arial, serif;
 	font-size: 18px;
 }
 
