@@ -33,7 +33,7 @@ def index():
 def update_posterous():
     posts = query_posterous.update_posterous()
     return 'Updated posts: %s' % str(posts)
-#
+
 @app.route('/update_commits')
 def update_commits():
     commits = query_github.update_github()

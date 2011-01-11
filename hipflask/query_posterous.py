@@ -3,6 +3,8 @@ import simplejson
 import posterous
 import re
 
+from google.appengine.api import memcache
+
 import settings
 
 encode_posts = simplejson.dumps
@@ -18,6 +20,7 @@ def delete_all(ModelClass):
         obj.delete()
 
 def update_posterous():
+    memcache.delete("posts")
     logging.info("updating posterous")
     primary_site = None
     try:
@@ -62,9 +65,14 @@ def update_posterous():
         return {}
 
 def get_posts():
-    try:
-        posts = decode_posts(RecentPosts.all()[0].postsJson)
-    except IndexError:
-        posts = update_posterous()
+    posts = memcache.get("posts")
+    if posts is not None:
+        return posts
+    else:
+        try:
+            posts = decode_posts(RecentPosts.all()[0].postsJson)
+            memcache.set("posts", posts)
+        except IndexError:
+            posts = update_posterous()
     
     return posts
