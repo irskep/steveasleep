@@ -2,22 +2,16 @@ import logging
 import simplejson
 import posterous
 import re
-
 from google.appengine.api import memcache
-
 import settings
 
 encode_posts = simplejson.dumps
 decode_posts = simplejson.loads
 
 from models import RecentPosts
+from queryutil import memcache_or_db_or_web, delete_all
 
 firstPar = re.compile(r"^(?P<first><p>.*</p>).*")
-
-def delete_all(ModelClass):
-    objs = ModelClass.all()
-    for obj in objs:
-        obj.delete()
 
 def update_posterous():
     memcache.delete("posts")
@@ -44,7 +38,6 @@ def update_posterous():
                 else:
                     return m
             else:
-                logging.info('no match')
                 return post.body
         posts = [{
             'title': post.title,
@@ -53,8 +46,6 @@ def update_posterous():
             'date': post.date.strftime("%B %d, %Y")
             
         } for post in posts_repr]
-        logging.info(str(posts))
-        logging.info(str(encode_posts(posts)))
         
         delete_all(RecentPosts)
         RecentPosts(postsJson=encode_posts(posts)).put()
@@ -64,15 +55,8 @@ def update_posterous():
         logging.info('No primary posterous site')
         return {}
 
-def get_posts():
-    posts = memcache.get("posts")
-    if posts is not None:
-        return posts
-    else:
-        try:
-            posts = decode_posts(RecentPosts.all()[0].postsJson)
-            memcache.set("posts", posts)
-        except IndexError:
-            posts = update_posterous()
-    
-    return posts
+get_posts = memcache_or_db_or_web(
+    "posts", 
+    lambda: decode_posts(RecentPosts.all()[0].postsJson), 
+    update_posterous
+)

@@ -21,7 +21,6 @@ from site import title_lookup, page_counts
 @app.route('/')
 def index():
     """Display front page with recent blog posts and Github commits"""
-    logging.info(str(query_posterous.get_posts()[0].keys()))
     context = {
         'posts': query_posterous.get_posts(),
         'commits': query_github.get_commits(),

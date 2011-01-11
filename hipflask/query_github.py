@@ -3,6 +3,7 @@ import simplejson
 import string
 
 from google.appengine.api.urlfetch import DownloadError
+from google.appengine.api import memcache
 
 from datetime import datetime
 from github2.client import Github
@@ -10,14 +11,10 @@ from github2.client import Github
 import settings
 
 from models import RecentCommits
+from queryutil import memcache_or_db_or_web, delete_all
 
 encode_commits = simplejson.dumps
 decode_commits = simplejson.loads
-
-def delete_all(ModelClass):
-    objs = ModelClass.all()
-    for obj in objs:
-        obj.delete()
 
 def update_github():
     logging.info("updating github")
@@ -61,10 +58,8 @@ def update_github():
     
     return recent_commits
 
-def get_commits():
-    try:
-        commits = decode_commits(RecentCommits.all()[0].commitsJson)
-    except IndexError:
-        commits = update_github()
-    
-    return commits
+get_commits = memcache_or_db_or_web(
+    "commits", 
+    lambda: decode_commits(RecentCommits.all()[0].commitsJson), 
+    update_github
+)
