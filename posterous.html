@@ -60,6 +60,11 @@
         border: none;
         margin: 1em;
     }
+    
+    div.posterous_comments h4, div.spanningheader h4 {
+        font-weight: normal;
+        font-size: 16px;
+    }
     </style>
     <title>
         {PageTitle}
@@ -85,11 +90,11 @@
         
     <div id="centerbody">
         {block:Subscription}
-            {block:SubscriptionUnsubscribed action_id='subscribe_link' content_div='subscribe_div'}
+            <!-- {block:SubscriptionUnsubscribed action_id='subscribe_link' content_div='subscribe_div'}
                 <div id="subscribe_div">
                     <a href="{SubscribeLink}" id="subscribe_link">Subscribe</a>
                 </div>
-            {/block:SubscriptionUnsubscribed}
+            {/block:SubscriptionUnsubscribed} -->
 
             {block:SubscriptionSubscribed action_id='unsubscribe_link' content_div='unsubscribe_div'}
                 <div id="unsubscribe_div">
@@ -257,13 +262,7 @@
                                     Posted by email&nbsp;
                                 {/block:AuthorEmail}
                             </div>
-                        {/block:Author}    
-            
-                        {block:Comments}
-                            {block:CommentsList action_id='comment_link_{PostID}' target_element='post_commentarea_{PostID}'}
-                                    <p style="margin-bottom: 0"><a href="{Permalink}#comment" id='comment_link_{PostID}'>Comments</a> [{CommentCount}]</p>
-                            {/block:CommentsList}
-                        {/block:Comments}
+                        {/block:Author}
                     
                     </div>
                 </div>          
@@ -274,36 +273,39 @@
 
             
             {block:Comments}
-                {block:CommentsShow}
-                        <a name="comment"></a>
-                        <div class="spanningheader" style="margin-top: 0px;">
-                            <h4 style="font-weight: normal; font-size: 16px;">Comments ({CommentCount})</h4>
-                        </div>
-                        {CommentCode}
+                {block:CommentsList   
+                  action_id='comment_link_{PostID}'   
+                  target_element='post_commentarea_{PostID}'}  
 
-                        <div class="spanningheader">
-                            <h4 style="font-weight: normal; font-size: 16px;">Leave a comment...</h4>
-                        </div>
-                        {NewCommentCode}                
+                    <div id='post_commentarea_{PostID}'></div>  
+                        <p><a href="#" id='comment_link_{PostID}'>Comments</a> [{CommentCount}]</p>  
+
+                {/block:CommentsList}  
+
+                {block:CommentsShow}  
+                    <a name="comment"></a>  
+                        <div class="spanningheader" style="margin-top: 0px;">  
+                            <h4>Comments ({CommentCount})</h4>  
+                        </div>  
+                        {CommentCode}  
+
+                        <div class="posterousAddNewComment">  
+                          <div class="spanningheader">  
+                              <h4>Leave a comment...</h4>  
+                          </div>  
+                          {NewCommentCode}
+                        </div>  
 
                 {/block:CommentsShow}
             {/block:Comments}
             
             {block:Favorite hover_id='postunit_{PostID}' position_id='post_{PostID}'/}         
         {/block:Posts}
-      
-
-
         <div class="pagepagination">
             {block:Pagination/}
         </div>
-    
-
-            
         <br style="clear: both;"/><br/>
-        
     </div>
-
 </body>
 </html>
 ​
