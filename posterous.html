@@ -38,8 +38,18 @@
     #subscribe_div a, #unsubscribe_div a, a {
         color: #3e4237;
     }
+    .tag_list {
+        font-size: 11px; 
+        line-height: 14px; 
+        color: #aaa; 
+        margin-top: 20px;
+    }
     .tagunit h2 {
         margin: 0;
+    }
+    .post .date {
+        margin-top: -1em;
+        padding: 0;
     }
     .content .bodytext h1 {
         font-size: 24px;
@@ -84,46 +94,8 @@
         </div>
     </div>
     <div class="space"></div>
-    <div class="posterous_flash">
-        {block:Flash/}
-    </div>
         
     <div id="centerbody">
-        {block:Subscription}
-            <!-- {block:SubscriptionUnsubscribed action_id='subscribe_link' content_div='subscribe_div'}
-                <div id="subscribe_div">
-                    <a href="{SubscribeLink}" id="subscribe_link">Subscribe</a>
-                </div>
-            {/block:SubscriptionUnsubscribed} -->
-
-            {block:SubscriptionSubscribed action_id='unsubscribe_link' content_div='unsubscribe_div'}
-                <div id="unsubscribe_div">
-                    <a href="{UnsubscribeLink}" id="unsubscribe_link">Unsubscribe</a>            
-                </div>
-            {/block:SubscriptionSubscribed}
-
-            {block:SubscriptionLoading}
-                <img src="/images/loading.gif">            
-            {/block:SubscriptionLoading}
-        {/block:Subscription}
-        <div id="img_and_search">
-            <a href="{ProfileLink}">
-                <img src="{PortraitURL-45}" width='75' height='75' class='profile_border'/>
-            </a><br/>
-            <a href="{RSS}"><img src="/images/feed-icon-14x14.png" width='14' height='14'/></a>
-            {block:NotSearchOrTag}
-            {/block:NotSearchOrTag}
-            {block:NotSearchOrTag}
-                <form class="search" method='get'>
-                    <input type='hidden' name='sort' value="{SearchSort}"/>
-                    <input type='text' name='search' value='{SearchQuery}' class="searchbox searchbox_mini" id="searchbox"/>
-                    <input type='submit' value='Search' class="searchbox_button" style="display:none;" id="searchbox_button"/>
-                </form>
-        
-                {block:SearchBox searchbox_button='searchbox_button' searchbox='searchbox'/}
-            {/block:NotSearchOrTag}
-        </div>
-
         {block:Tag}
             <div class="tagunit" id="tag_div">
                 <h2 style="margin-top: 0px; color: #111">{Tag}</h2>
@@ -162,9 +134,6 @@
                             <li>{block:SearchSortRecent}<b>Most recent</b>{Else}<a href="{CurrentURL}?search={SearchQuery}&sort=recent">Most recent</a>{/block:SearchSortRecent}</li>
                             <li>{block:SearchSortInteresting}<b>Most interesting</b>{Else}<a href="{CurrentURL}?search={SearchQuery}&sort=interesting">Most interesting</a>{/block:SearchSortInteresting}</li>
                     </ul>
-                    <br/>
-                    <a href="{PosterousURL}/explore/?search={SearchQuery}">Search all of posterous for <b>{SearchQuery}</b> &raquo;</a>
-
                 </div>
             </div>
             <br style="clear: left;"/>
@@ -173,21 +142,17 @@
 
         {block:Posts}
              <div class="content postunit" id="postunit_{PostID}">
-                <div class="date"> 
-                
-                    <div id="post_control_{PostID}"></div>
-                
-                    {block:Private}
-                        <p>
-                            <a href="{Permalink}" class="tooltip_link"><img src="/images/icons/lock12.png" width='12' height='12' alt='Private'/>
-                                <span style="top: 0px; right: 0px; width: 100px; font-size: 11px;">
-                                    <b>Private Post</b><br/>
-                                    This post has a secret URL and not linked on your public blog. Send the secret URL to share it with anyone.
-                                </span>
-                            </a>
-                        </p>
-                    {/block:Private}
-                </div>
+                 <div id="post_control_{PostID}"></div>
+                 {block:Private}
+                     <p>
+                         <a href="{Permalink}" class="tooltip_link"><img src="/images/icons/lock12.png" width='12' height='12' alt='Private'/>
+                             <span style="top: 0px; right: 0px; width: 100px; font-size: 11px;">
+                                 <b>Private Post</b><br/>
+                                 This post has a secret URL and not linked on your public blog. Send the secret URL to share it with anyone.
+                             </span>
+                         </a>
+                     </p>
+                 {/block:Private}
         
                 <div class="post" id="post_{PostID}" >
                     <div class='editbox'>
@@ -199,105 +164,28 @@
                     {block:Title}
                         <h2 class="posttitle" id="posttitle_{PostID}"><a href="{Permalink}">{Title}</a></h2>
                     {/block:Title}
-            
-                    {block:SMS}
-                        <div class="sms_notice">Posted from my mobile phone (SMS)</div>
-                    {/block:SMS}
                     
-                    <div class="inlineDate">
-                    {block:NewDayDate}
-                        <a href="{Permalink}">
-                           {Month}
-                           {DayOfMonth},
-                           {Year}
-                        </a>
-                    {/block:NewDayDate}
-                    </div>
+                    <div class="date">{block:NewDayDate}
+                        {Month} {DayOfMonth}, {Year}
+                    {/block:NewDayDate}</div>
                     
                     <div class="bodytext" >
                         <p>{Body}</p>
                         <div style="clear: both;"></div>
                         
-                        {block:List}
-                            {block:TagList}
-                              <div style="font-size: 11px; line-height: 14px; color: #aaa; margin-top: 20px;">
-                                <b>Filed under</b>&nbsp; // &nbsp;
-                                  {block:TagListing}
-                                    <a href="{TagLink}" style="color: #666">{TagName}</a>&nbsp;&nbsp;
-                                  {/block:TagListing}
-                              </div>     
-                            {/block:TagList}
-                        {/block:List}
-                        
-                        {block:PostLocations}
-                            <div style="font-size: 10px; color: #999; margin-top: 10px;" id="location_collapsed_{PostID}">
-                                Posted from <a href="#" id="post_location_expander_{PostID}">{LocationsSummary}</a>
-                            </div>
-                            <div style="margin-top: 20px; padding: 8px; background-color: #f9f9f9; border: 1px solid #eee; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; display: none;" id="post_location_expanded_{PostID}">
-                                <div class="map" style="float: left; width: 300px; height: 150px;">
-                                {MapIframe}
-                                </div>
-                                <div style="float:right;width:172px">
-                                  <b>Posted from</b><br/>
-                                  {block:PostLocation uniq_by='summary'}
-                                      {LocationSummary}<br/>
-                                  {/block:PostLocation}
-                              </div>
-                                <br style="clear: both;" />
-                            </div>
-                            
-                            {block:ShowOnClick action_id='post_location_expander_{PostID}' hidden_div='post_location_expanded_{PostID}' to_hide_id='location_collapsed_{PostID}'/}  
-                        {/block:PostLocations}
+                        {block:TagList}
+                          <div class="tag_list">
+                            <b>Filed under</b>&nbsp; // &nbsp;
+                              {block:TagListing}
+                                <a href="{TagLink}" style="color: #666">{TagName}</a>&nbsp;&nbsp;
+                              {/block:TagListing}
+                          </div>     
+                        {/block:TagList}
                     </div>
-                
-                    <div class="comment_list">
-                        {block:Author}
-                            <div class="posted_by">
-                                  {block:AuthorUser}
-                                    Posted by <a href="{AuthorURL}">{AuthorName}&nbsp;
-                                    <img src="{AuthorPortraitURL-35}" 
-                                        width='12' height='12' class='profile_border'/></a>
-                                {/block:AuthorUser}
-                                {block:AuthorEmail}
-                                    Posted by email&nbsp;
-                                {/block:AuthorEmail}
-                            </div>
-                        {/block:Author}
-                    
-                    </div>
-                </div>          
-                {block:Comments}
-                    <div id="post_commentarea_{PostID}" class="posterous_commentarea" style="float: left; clear: left;"></div>
-                {/block:Comments}
+                </div>
             </div>
-
             
-            {block:Comments}
-                {block:CommentsList   
-                  action_id='comment_link_{PostID}'   
-                  target_element='post_commentarea_{PostID}'}  
-
-                    <div id='post_commentarea_{PostID}'></div>  
-                        <p><a href="#" id='comment_link_{PostID}'>Comments</a> [{CommentCount}]</p>  
-
-                {/block:CommentsList}  
-
-                {block:CommentsShow}  
-                    <a name="comment"></a>  
-                        <div class="spanningheader" style="margin-top: 0px;">  
-                            <h4>Comments ({CommentCount})</h4>  
-                        </div>  
-                        {CommentCode}  
-
-                        <div class="posterousAddNewComment">  
-                          <div class="spanningheader">  
-                              <h4>Leave a comment...</h4>  
-                          </div>  
-                          {NewCommentCode}
-                        </div>  
-
-                {/block:CommentsShow}
-            {/block:Comments}
+            {block:Comments/}
             
             {block:Favorite hover_id='postunit_{PostID}' position_id='post_{PostID}'/}         
         {/block:Posts}
@@ -305,6 +193,32 @@
             {block:Pagination/}
         </div>
         <br style="clear: both;"/><br/>
+        {block:Subscription}
+            {block:SubscriptionSubscribed action_id='unsubscribe_link' content_div='unsubscribe_div'}
+                <div id="unsubscribe_div">
+                    <a href="{UnsubscribeLink}" id="unsubscribe_link">Unsubscribe</a>            
+                </div>
+            {/block:SubscriptionSubscribed}
+
+            {block:SubscriptionLoading}
+                <img src="/images/loading.gif">            
+            {/block:SubscriptionLoading}
+        {/block:Subscription}
+        
+        <div id="img_and_search">
+            <a href="{ProfileLink}">
+                <img src="{PortraitURL-45}" class='profile_border'/>
+            </a><br/>
+            <a href="{RSS}"><img src="/images/feed-icon-14x14.png" width='14' height='14'/></a><br/>
+            {block:NotSearchOrTag}
+                <form class="search" method='get'>
+                    <input type='hidden' name='sort' value="{SearchSort}"/>
+                    <input type='text' name='search' value='{SearchQuery}' class="searchbox searchbox_mini" id="searchbox"/>
+                    <input type='submit' value='Search' class="searchbox_button" style="display:none;" id="searchbox_button"/>
+                </form>
+                {block:SearchBox searchbox_button='searchbox_button' searchbox='searchbox'/}
+            {/block:NotSearchOrTag}
+        </div>
     </div>
 </body>
 </html>
