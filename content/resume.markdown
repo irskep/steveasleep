@@ -32,15 +32,14 @@
 
 ### Activities, Interests, and Hobbies
 
-**Splatterboard**
+**[Space Train](www.steveasleep.com/spacetrain)**
 
-* Built an open-source drawing program in Python aimed at children and curious adults
-* Designed a brush plug-in system with public API
+* Managed 3 programmers and 6 artists in 3-month adventure game project
+* Designed event-driven point-and-click adventure game engine with scripting API and graphical level editor
 
-**Gw0rp**
-
-* Acted as designer, programmer, and project lead for an entry in a game contest
-* Managed 8,000-line Python code base consisting of game engine and support tools
+**[Web Presence](www.steveasleep.com)**
+* Project showcase built on Google App Engine with Github and Posterous integration
+* Regularly updated tech blog with original content
 
 **Community**
 
