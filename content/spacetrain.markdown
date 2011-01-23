@@ -33,3 +33,6 @@ The Team
 
 [Download for Windows](http://bit.ly/ezkLgv)
 --------------------------------------------
+
+[Source Code](http://www.github.com/irskep/Space-Train)
+--------------------------------------------
