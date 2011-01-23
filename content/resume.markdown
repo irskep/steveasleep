@@ -9,7 +9,7 @@
 ### Technical Skills
 
 **Languages:** Python, C, Objective-C, Java, Javascript  
-**Technologies:** Cocoa, Django, Google App Engine, HTML, CSS, OpenGL, SQL, Swing
+**Technologies:** Cocoa, Django, Google App Engine, HTML, CSS, OpenGL, SQL, Swing  
 **Tools:** Git, Mercurial, Subversion, UNIX tools and workflows, Eclipse, vim. Various desktop publishing, audio, and 3D modeling tools.
 
 ### Selected Work Experience
