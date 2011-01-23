@@ -38,6 +38,7 @@
 * Designed event-driven point-and-click adventure game engine with scripting API and graphical level editor
 
 **[Web Presence](www.steveasleep.com)**
+
 * Project showcase built on Google App Engine with Github and Posterous integration
 * Regularly updated tech blog with original content
 
