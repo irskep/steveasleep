@@ -2,9 +2,9 @@
 
 ### Education
 
-**Currently Enrolled:** Case Western Reserve University, pursuing B.S. and M.S. in Computer Science  
-**Expect to Graduate:** January 2012  
-**Current GPA:** 3.61
+**Currently Enrolled:** Case Western Reserve University, B.S. and M.S. in Computer Science
+**Expect to Graduate:** B.S. in May 2011, M.S. in January 2012
+**Current GPA:** 3.66
 
 ### Technical Skills
 
