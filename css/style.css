@@ -65,7 +65,7 @@ h1 {
 }
 
 #top_links {
-	text-align: center;
+		text-align: center;
 	color: #fee;
 }
 
@@ -200,4 +200,8 @@ ul.recent_commits {
 
 .sidebar_bubble ul.recent_commits a {
 	color: #FAF0C8;
+}
+
+.resume p {
+	margin-bottom: 0;
 }
