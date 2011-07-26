@@ -1,4 +1,5 @@
 - default:
+  - Blog: http://stevejohnson.posterous.com/
   - Music: music
   - Start Making Games: http://stevejohnson.posterous.com/a-starting-point-for-making-games
   - Python Game Tutorial/Python Game Programming Tutorial: pyglettutorial
@@ -16,11 +17,6 @@
   - Space Train: spacetrain
   - Splatterboard: splatterboard
 
-- Code:  
-  - JTrie: http://www.github.com/irskep/jtrie
-  - Regex compiler: http://www.github.com/irskep/regex_compiler
-  - T-Reg: http://www.github.com/irskep/T-Reg
-
 - Social:  
   - Books: http://filer.case.edu/srj15/deliciouslibrary/index.html
   - Github: http://www.github.com/irskep
@@ -28,6 +24,6 @@
   - Stack Overflow: http://stackoverflow.com/users/8061/steve-johnson
   - Hacker Résumé: hacker_resume
   - LinkedIn: http://www.linkedin.com/pub/steve-johnson/11/900/567
-  - Hacker Buddy: http://hackerbuddy.com/users/show/702
+  # - Hacker Buddy: http://hackerbuddy.com/users/show/702
   # - Stack Overflow CV: http://careers.stackoverflow.com/stevejohnson
   # - Github Résumé: http://resume.github.com/?irskep

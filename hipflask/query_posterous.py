@@ -28,7 +28,7 @@ def update_posterous():
         if site.primary:
             primary_site = site
     if primary_site:
-        posts_repr = primary_site.read_posts()[:settings.NUM_POSTEROUS_POSTS]
+        posts_repr = [p for p in primary_site.read_posts() if not p.private][:settings.NUM_POSTEROUS_POSTS]
         def first_par_for_post(post):
             summary_match = firstPar.match(post.body)
             if summary_match:
