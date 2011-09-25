@@ -60,15 +60,7 @@ h2 a {
 }
 
 ul {
-    margin-left: 0;
     margin-right: 0;
-	padding-left: 0;
-}
-
-li {
-    list-style: none;
-	margin-left: 0;
-	padding-left: 0;
 }
 
 #main {
@@ -137,7 +129,14 @@ li {
 }
 
 ul.link_list {
+    list-style: none;
+	padding-left: 0;
     margin-bottom: 0;
+    margin-left: 0;
+}
+
+ul.link_list li {
+	margin-left: 0;
 }
 
 .content {
@@ -183,7 +182,7 @@ ul.recent_post_titles {
     font-size: 1.2em;
     margin-left: 0;
 }
-ul.recent_post_titles li, ul.recent_commits li {
+ul.recent_commits li {
     list-style: none;
     border-bottom: 1px solid #aaa;
 	margin: 0;
@@ -191,10 +190,10 @@ ul.recent_post_titles li, ul.recent_commits li {
     padding-bottom: 0.25em;
     padding-top: 0.25em;
 }
-ul.recent_post_titles li, ul.recent_commits li.last {
+ul.recent_commits li.last {
     border-bottom: none;
 }
-ul.recent_post_titles li.last, ul.recent_commits li.last {
+ul.recent_commits li.last {
     margin-bottom: none;
 }
 ul.recent_commits {
