@@ -1,12 +1,11 @@
 - default:
-  - Blog: http://stevejohnson.posterous.com/
   - Music: music
-  - Start Making Games: http://stevejohnson.posterous.com/a-starting-point-for-making-games
-  - Python Game Tutorial/Python Game Programming Tutorial: pyglettutorial
+  - Python Game Programming Tutorial: pyglettutorial
     pages: 6
 
 - hidden:
   - Résumé: resume
+  - Hacker Résumé: hacker_resume
 
 - Toys:    
   - Art Project 1: art_project_1
@@ -19,10 +18,8 @@
 
 - Social:  
   - Books: http://filer.case.edu/srj15/deliciouslibrary/index.html
-  - Github: http://www.github.com/irskep
   - Hacker News: http://news.ycombinator.com/user?id=stevejohnson
   - Stack Overflow: http://stackoverflow.com/users/8061/steve-johnson
-  - Hacker Résumé: hacker_resume
   - LinkedIn: http://www.linkedin.com/pub/steve-johnson/11/900/567
   # - Hacker Buddy: http://hackerbuddy.com/users/show/702
   # - Stack Overflow CV: http://careers.stackoverflow.com/stevejohnson

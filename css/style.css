@@ -14,7 +14,7 @@ a.basic:hover {
 
 body {
     padding-top: 1em;
-    background-color: rgb(194, 194, 206);
+    background-color: rgb(247, 247, 247);
     color: rgb(54, 44, 52);
 }
 
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 hr {
-	border-color: #3e4237;
+	border-color: #aaa;
 }
 
 p {
@@ -38,11 +38,44 @@ p {
 }
 
 h1 {
-	font-family: 'Copse', arial, serif;
-	font-weight: normal;
 	margin: 0;
 	font-size: 48px;
 	text-align: center;
+}
+
+h2 {
+	font-size: 18px;
+	color: #33302c;
+	font-weight: normal;
+	margin: 0;
+}
+
+a, a:visited, a:hover {
+    color: #fff;
+	color: #33302c;
+	text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+/*  color: #ffe8a9;*/
+}
+
+a:visited {
+/*  color: #ffe8a9;*/
+}
+
+ul {
+    margin-left: 0;
+    margin-right: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+li {
+    list-style: none;
+	margin-left: 0;
+	padding-left: 0;
 }
 
 #main {
@@ -88,8 +121,16 @@ h1 {
 	text-decoration: underline;
 }
 
+.bubble {
+	background-color:rgba(155,155,166,0.1);
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+}
+
 .sidebar_bubble {
-	background-color:rgba(155,155,166,0.5);
+	/*background-color:rgba(155,155,166,0.5);*/
 	color: #fff;
 	padding: 10px;
 	
@@ -102,48 +143,7 @@ h1 {
 	margin-bottom: 1em;
 }
 
-.sidebar_bubble h2 {
-	font-size: 18px;
-/*  color: #FAF0C8;*/
-	color: #33302c;
-	text-shadow: 1px 1px 0px rgb(215,222,231);
-    filter: dropshadow(color=rgb(215,222,231), offx=1, offy=1);
-	font-weight: normal;
-	margin: 0;
-}
-
-.sidebar_bubble a, .sidebar_bubble a:visited, .sidebar_bubble a:hover {
-    color: #fff;
-	color: #33302c;
-	text-shadow: 1px 1px 0px rgb(215,222,231);
-    filter: dropshadow(color=rgb(215,222,231), offx=1, offy=1);
-	text-decoration: none;
-}
-
-.sidebar_bubble a:hover {
-  text-decoration: underline;
-/*  color: #ffe8a9;*/
-}
-
-.sidebar_bubble a:visted {
-/*  color: #ffe8a9;*/
-}
-
-.sidebar_bubble ul {
-    margin-left: 0;
-    margin-right: 0;
-	margin-bottom: 0;
-	padding-left: 0;
-}
-
-.sidebar_bubble li {
-    list-style: none;
-	margin-left: 0;
-	padding-left: 0;
-}
-
 .content {
-	background-color:rgba(100,100,100,0.1);
 	
 	padding: 10px;
 	margin-bottom: 10px;
@@ -174,20 +174,6 @@ h1 {
 	margin-bottom: 0.5em;
 	font-size: 24px;
 	font-weight: normal;
-}
-
-.content a, .content a:visited, .content a:hover {
-    color: rgb(108, 88, 104);
-	text-decoration: none;
-}
-
-.content h2 a, .content h2 a:visited, .content h2 a:hover {
-	color: #3e4237;
-	color: rgb(40, 29, 23);
-}
-
-.content a:hover {
-	text-decoration: underline;
 }
 
 #bottom {

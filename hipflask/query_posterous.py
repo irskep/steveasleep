@@ -57,6 +57,6 @@ def update_posterous():
 
 get_posts = memcache_or_db_or_web(
     "posts", 
-    lambda: decode_posts(RecentPosts.all()[0].postsJson), 
+    lambda: decode_posts(RecentPosts.all()[0].postsJson)[:3], 
     update_posterous
 )

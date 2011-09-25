@@ -23,44 +23,64 @@
     </script>
 </head>
 <body>
-    <!-- <div id="top">
-        <h1><a href="http://www.steveasleep.com/">Steve Johnson's <span style="color: #FAF0C8">Web Presence</span></a></h1>
-        <div id="top_links">
-            <a href="http://stevejohnson.posterous.com/">Blog</a> /
-            <a href="http://www.hackthology/">Hackthology</a> /
-            <a href="http://www.steveasleep.com/resume">Résumé</a> /
-            <a href="http://www.twitter.com/irskep">Twitter</a> /
-            <a href="http://goto.case.edu/">CWRU Hacker Society</a>
-        </div>
-    </div>
-    <div class="space"></div> -->
     <div class="container_12">
         <div class="grid_12" id="main">
             <div class="grid_12 alpha omega" id="header">
-                <img src="images/header.png"/>
+                <a href="/"> <img src="images/header.png"/></a>
             </div>
-            <div class="grid_3 alpha prefix_1">
-                <div class="sidebar_bubble">
-                    {% for group in groups %}
-                        {% if group.name != 'default' %}<br/><h2>{{group.name}}</h2>{% endif %}
-                        <ul>
-                            {% for item in group['items'] %}
-                                <li><a href="{{item.url}}">{{item.name}}</a></li>
+            <div class="grid_6 alpha">
+                <div class="col_left">
+                    <div class="bubble">
+                        <a href="http://www.hackthology.com/">Hackthology</a> /
+                        <a href="http://www.twitter.com/irskep">Twitter</a> /
+                        <a href="http://hacsoc.github.com/">CWRU Hacker Society</a>
+                    </div>
+                    {% for item in groups[0]['items'] %}
+                    <div class="bubble">
+                        <h2><a href="{{item.url}}">{{item.name}}</a></h2>
+                    </div>
+                    {% endfor %}
+                    <div class="bubble">
+                        <h2><a href="http://www.github.com/irskep">github.com/irskep</a></h2> 
+                        <ul class="recent_commits"> 
+                            {% for c in commits %}
+                            <li {% if loop.last %}class="last"{% endif %}>
+                            <a href="{{c.repo_url}}">{{c.repo_name}}</a>
+                            on {{c.time.month}}/{{c.time.day}}/{{c.time.year}}
+                            at {{c.time.hour}}:{{c.time.minute}}:<br/>{{c.message}}
+                            </li>
                             {% endfor %}
                         </ul>
-                    {% endfor %}
-                    <br/>
-                    <h2>Github stream</h2> 
-                    <ul class="recent_commits"> 
-                        {% for c in commits %}
-                            <li><a href="{{c.repo_url}}">{{c.repo_name}}</a> on {{c.time.month}}/{{c.time.day}}/{{c.time.year}} at {{c.time.hour}}:{{c.time.minute}}:<br/>{{c.message}}</li>
-                        {% endfor %}
-                    </ul>
+                    </div>
+                    <div class="grid_6 alpha omega">
+                        <div class="grid_3 alpha">
+                            <div class="bubble" style="margin-right: -0.5em;">
+                                <h2>{{groups[1].name}}</h2>
+                                <ul>
+                                    {% for item in groups[1]['items'] %}
+                                        <li><a href="{{item.url}}">{{item.name}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grid_3 omega">
+                            <div class="bubble" style="margin-left: -0.5em;">
+                                <h2>{{groups[2].name}}</h2>
+                                <ul>
+                                    {% for item in groups[2]['items'] %}
+                                        <li><a href="{{item.url}}">{{item.name}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="grid_7 omega suffix_1">
-                {% block content %}{% endblock %}
-                <br/>
+            <div class="grid_6 omega">
+                <div class="col_right">
+                    {% block content %}{% endblock %}
+                    <br/>
+                </div>
             </div>
         </div>
         <div class="clear"></div>
