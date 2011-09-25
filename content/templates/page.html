@@ -2,7 +2,8 @@
 
 {% block title %}{{title}}{% endblock %}
 
-{% block content %}
+{% block everything %}
+    <div class="grid_8 alpha omega push_2">
     <div class="content">
         <h2>{{title}}</h2>
         {{html}}
@@ -21,4 +22,5 @@
             <div style="clear: both"></div>
         {% endif %}
     </div>
+</div>
 {% endblock %}

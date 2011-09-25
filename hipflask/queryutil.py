@@ -12,6 +12,7 @@ def memcache_or_db_or_web(memcache_name, db_func, web_func):
                 memcache.set(memcache_name, thingy)
             except IndexError:
                 thingy = web_func()
+                memcache.delete(memcache_name)
         return thingy
     return get
 

@@ -62,7 +62,6 @@ h2 a {
 ul {
     margin-left: 0;
     margin-right: 0;
-	margin-bottom: 0;
 	padding-left: 0;
 }
 
@@ -135,6 +134,10 @@ li {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 	margin-bottom: 1em;
+}
+
+ul.link_list {
+    margin-bottom: 0;
 }
 
 .content {
