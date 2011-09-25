@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-    <div id="top">
+    <!-- <div id="top">
         <h1><a href="http://www.steveasleep.com/">Steve Johnson's <span style="color: #FAF0C8">Web Presence</span></a></h1>
         <div id="top_links">
             <a href="http://stevejohnson.posterous.com/">Blog</a> /
@@ -33,32 +33,35 @@
             <a href="http://goto.case.edu/">CWRU Hacker Society</a>
         </div>
     </div>
-    <div class="space"></div>
+    <div class="space"></div> -->
     <div class="container_12">
-        <div id="null" class="grid_1 alpha">&nbsp;</div>
-        <div class="grid_2">
-            <div class="sidebar_bubble" class="grid_2">
-                {% for group in groups %}
-                    {% if group.name != 'default' %}<h2>{{group.name}}</h2>{% endif %}
-                    <ul>
-                        {% for item in group['items'] %}
-                            <li><a href="{{item.url}}">{{item.name}}</a></li>
+        <div class="grid_12" id="main">
+            <div class="grid_12 alpha omega" id="header">
+                <img src="images/header.png"/>
+            </div>
+            <div class="grid_3 alpha prefix_1">
+                <div class="sidebar_bubble">
+                    {% for group in groups %}
+                        {% if group.name != 'default' %}<br/><h2>{{group.name}}</h2>{% endif %}
+                        <ul>
+                            {% for item in group['items'] %}
+                                <li><a href="{{item.url}}">{{item.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                    <br/>
+                    <h2>Github stream</h2> 
+                    <ul class="recent_commits"> 
+                        {% for c in commits %}
+                            <li><a href="{{c.repo_url}}">{{c.repo_name}}</a> on {{c.time.month}}/{{c.time.day}}/{{c.time.year}} at {{c.time.hour}}:{{c.time.minute}}:<br/>{{c.message}}</li>
                         {% endfor %}
                     </ul>
-                {% endfor %}
+                </div>
             </div>
-            <div class="sidebar_bubble">
-                <h2>Github stream</h2> 
-                <ul class="recent_commits"> 
-                    {% for c in commits %}
-                        <li><a href="{{c.repo_url}}">{{c.repo_name}}</a> on {{c.time.month}}/{{c.time.day}}/{{c.time.year}} at {{c.time.hour}}:{{c.time.minute}}:<br/>{{c.message}}</li>
-                    {% endfor %}
-                </ul>
+            <div class="grid_7 omega suffix_1">
+                {% block content %}{% endblock %}
+                <br/>
             </div>
-        </div>
-        <div class="grid_8 omega">
-            {% block content %}{% endblock %}
-            <p class="centeredimage"><img src="images/logo2.png" style="margin: 1em;"/></p>
         </div>
         <div class="clear"></div>
     </div>
@@ -69,6 +72,7 @@
         <br/> 
         Powered by <a href="http://flask.pocoo.org/">Flask</a>
         and <a href="http://code.google.com/appengine/">Google App Engine</a>
+        <br/><br/>
     </div>
 </body>
 </html>

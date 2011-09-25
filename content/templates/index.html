@@ -3,16 +3,22 @@
 {% block content %}
 <div class="content">
     <p style="margin: 0">
-        I am Steve Johnson, a student at Case Western Reserve University studying Computer Science. In addition to course work, internships, and the projects shown on this site, I help organize weekly tech talks at CWRU and play the piano for <a href="http://improv.case.edu/">IMPROVment</a>.
+        I a student at Case Western Reserve University studying Computer Science. In addition to course work, internships, and the projects shown on this site, I help organize weekly tech talks at CWRU and play the piano for <a href="http://improv.case.edu/">IMPROVment</a>.
     </p>
+    <br/>
+    <a href="http://www.hackthology/">Hackthology</a> /
+    <a href="http://www.steveasleep.com/resume">Résumé</a> /
+    <a href="http://www.twitter.com/irskep">Twitter</a> /
+    <a href="http://goto.case.edu/">CWRU Hacker Society</a>
 </div>
-{% for post in posts %}
-    <div class="content">
+<div class="content">
+    {% for post in posts %}
         <h2><a href="{{post.link}}">{{post.title}}</a></h2>
         {% autoescape off %}{{post.body}}{% endautoescape %}
         <a href="{{post.link}}">more...</a>
-    </div>
-{% endfor %}
+        <hr/>
+    {% endfor %}        
+</div>
 <div style="text-align: center">
     <a class="basic" href="http://stevejohnson.posterous.com/">More blog posts</a>
 </div>
