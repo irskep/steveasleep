@@ -2,16 +2,6 @@
 	height: 2em;
 }
 
-a.basic, a.basic:visited {
-	text-decoration: none;
-	color: #3e4237;
-}
-
-a.basic:hover {
-	text-decoration: underline;
-	color: #3e4237;
-}
-
 body {
     padding-top: 1em;
     background-color: rgb(247, 247, 247);
@@ -53,7 +43,7 @@ h2 {
 a, a:visited, a:hover {
     color: #fff;
 	color: #33302c;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {
@@ -63,6 +53,10 @@ a:hover {
 
 a:visited {
 /*  color: #ffe8a9;*/
+}
+
+h2 a {
+    text-decoration: none;
 }
 
 ul {

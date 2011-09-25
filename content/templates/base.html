@@ -31,8 +31,8 @@
             <div class="grid_6 alpha">
                 <div class="col_left">
                     <div class="bubble">
-                        <a href="http://www.hackthology.com/">Hackthology</a> /
-                        <a href="http://www.twitter.com/irskep">Twitter</a> /
+                        <a href="http://www.hackthology.com/">Hackthology</a> &nbsp;&nbsp;
+                        <a href="http://www.twitter.com/irskep">Twitter</a> &nbsp;&nbsp;
                         <a href="http://hacsoc.github.com/">CWRU Hacker Society</a>
                     </div>
                     {% for item in groups[0]['items'] %}
@@ -43,6 +43,12 @@
                     <div class="bubble">
                         <h2><a href="http://www.github.com/irskep">github.com/irskep</a></h2> 
                         <ul class="recent_commits"> 
+                            <li>
+                                Recent projects:
+                                <a href="http://www.github.com/yelp/mrjob">mrjob</a>
+                                <a href="http://www.github.com/irskep/ct">cuttime</a>
+                                <a href="http://www.github.com/irskep/schemutt">schemutt</a>
+                            </li>
                             {% for c in commits %}
                             <li {% if loop.last %}class="last"{% endif %}>
                             <a href="{{c.repo_url}}">{{c.repo_name}}</a>

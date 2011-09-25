@@ -1,5 +1,3 @@
-<div style="text-align: center;"><img style="border: none; margin-bottom: 1em;" src="/images/spacetrain.png"/></div>
-
 Inga Borga is a poetry-loving senior citizen. One of her favorite authors, Stanislov Slavinsky, is reading his poetry live on the nearby Planet Deux, a short hop by space train from Inga’s home. She wants nothing more than to see Stanislav in person, so she catches the Mustachio Express to Planet Deux. Little does she know it will be a bumpy ride...
 
 <hr/>
@@ -28,11 +26,10 @@ The Team
 - **Dylan Carrow**: Coloring, objects
 - **Vincent Pizarski**: Character design, coloring, exteriors
 
+<br/>
+
 [Download for Mac](http://bit.ly/eM6urh)
-----------------------------------------
 
 [Download for Windows](http://bit.ly/ezkLgv)
---------------------------------------------
 
 [Source Code](http://www.github.com/irskep/Space-Train)
---------------------------------------------
