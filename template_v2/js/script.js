@@ -1,11 +1,11 @@
-// GitHub API wrapper. http://develop.github.com/
-function GitHubAPI(){}
+function GitHubAPI(){};
 
-// http://develop.github.com/p/repo.html
 GitHubAPI.Repos = function(username, callback){
-	requestURL = "http://github.com/api/v2/json/repos/show/" + username + "?callback=?";
+	requestURL = "https://api.github.com/users/" + username + "/repos?callback=?";
+    console.log(requestURL);
 	$.getJSON(requestURL, function(json, status){
-		callback(json.repositories.reverse(), status);
+        console.log(json);
+		callback(json.data.reverse(), status);
 	});
 }
 
