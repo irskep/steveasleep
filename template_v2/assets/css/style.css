@@ -4020,3 +4020,20 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.headshot {
+  margin-bottom: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.headshot img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.quote {
+  margin-bottom: 20px;
+}
