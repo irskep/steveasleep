@@ -690,5 +690,6 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 body{background-image:url("../img/px_by_Gre3g.png");padding-top:74px;}
 .navbar .brand{font-family:'Ropa Sans',sans-serif;font-size:36px;}
 .container{color:white;}
-.content-box{background-color:rgba(255, 255, 255, 0.1);padding:10px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;}.content-box h1 a,.content-box h2 a{color:white;}
+.content-box{background-color:rgba(255, 255, 255, 0.1);padding:10px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;margin-bottom:20px;}.content-box h1 a,.content-box h2 a{color:white;}
+.content-box a{color:white;}
 .github h2,.blog-post h2{border-top:1px solid #999999;margin-top:5px;margin-bottom:5px;}

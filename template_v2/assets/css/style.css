@@ -4005,9 +4005,13 @@ body {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+  margin-bottom: 20px;
 }
 .content-box h1 a,
 .content-box h2 a {
+  color: white;
+}
+.content-box a {
   color: white;
 }
 .github h2,
