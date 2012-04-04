@@ -4035,6 +4035,7 @@ body {
   display: block;
   margin: auto;
   width: 100%;
+  max-width: 340px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
